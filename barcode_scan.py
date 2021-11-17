@@ -65,7 +65,7 @@ for root, dirs, files in os.walk(args['srcDir']):
             if len(symbols) == 0:
                 symbols = opencv_engine.processFile(fileName)
 
-            print f, ': ', list(set(symbols))
+            print(f, ': ', list(set(symbols)))
 
             for symbol in list(set(symbols)):
                 newName = nextFilename(args['dstDir'], symbol) + ext
@@ -75,5 +75,5 @@ for root, dirs, files in os.walk(args['srcDir']):
                 shutil.copy2(fileName, os.path.join(args['lostDir'], f))
 
         except:
-            print "Problem handling file ", f, ': ', sys.exc_info()
+            print("Problem handling file ", f, ': ', sys.exc_info())
             #pass
